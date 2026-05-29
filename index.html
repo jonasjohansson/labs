@@ -48,24 +48,24 @@
         h.textContent = group.name;
         section.appendChild(h);
 
-        const cards = document.createElement("div");
-        cards.className = "grid";
+        const list = document.createElement("div");
+        list.className = "items";
 
         for (const t of group.items) {
-          const card = document.createElement("a");
-          card.className = "card";
-          card.href = t.url;
-          card.target = "_blank";
-          card.rel = "noopener noreferrer";
-          card.innerHTML =
-            '<h3 class="card-title">' +
+          const item = document.createElement("a");
+          item.className = "item";
+          item.href = t.url;
+          item.target = "_blank";
+          item.rel = "noopener noreferrer";
+          item.innerHTML =
+            '<span class="item-title">' +
             t.title +
-            "</h3>" +
-            (t.description ? '<p class="card-desc">' + t.description + "</p>" : "");
-          cards.appendChild(card);
+            "</span>" +
+            (t.description ? '<span class="item-desc">' + t.description + "</span>" : "");
+          list.appendChild(item);
         }
 
-        section.appendChild(cards);
+        section.appendChild(list);
         grid.appendChild(section);
       }
     </script>

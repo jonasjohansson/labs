@@ -116,40 +116,50 @@ body {
   font-size: var(--font-size-small);
   opacity: 0.4;
   margin: 0 0 var(--spacing-lg);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 1px solid var(--hairline);
   font-weight: normal;
 }
 
-/* Card grid — restrained monochrome hairline cards */
-.grid {
+/* Typographic index — no boxes, dense and editorial like the main site.
+   Two columns on wide screens, single column on narrow. */
+.items {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: var(--spacing-lg);
+  grid-template-columns: 1fr;
+  column-gap: var(--spacing-2xl);
+  row-gap: var(--spacing-lg);
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
-  padding: var(--spacing-lg);
-  border: 1px solid var(--hairline);
-  border-radius: var(--radius-sm);
+@media (min-width: 820px) {
+  .items {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.item {
+  display: block;
   color: var(--text-primary);
   text-decoration: none;
-  transition: border-color 0.2s ease;
+  line-height: var(--line-height-base);
 }
 
-.card:hover {
-  border-color: var(--hairline-strong);
-}
-
-.card-title {
+.item-title {
   font-size: var(--font-size-intro);
-  line-height: var(--line-height-base);
-  margin: 0;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  text-decoration-color: transparent;
+  transition: text-decoration-color 0.18s ease;
 }
 
-.card-desc {
+.item:hover .item-title {
+  text-decoration-color: currentColor;
+}
+
+.item-desc {
+  display: block;
   font-size: var(--font-size-small);
-  line-height: var(--line-height-base);
-  margin: var(--spacing-xs) 0 0;
-  opacity: 0.6;
+  opacity: 0.55;
+  margin-top: var(--spacing-xs);
+  max-width: 46ch;
 }
