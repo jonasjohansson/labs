@@ -74,24 +74,6 @@ body {
   margin-bottom: var(--spacing-2xl);
 }
 
-.back {
-  display: inline-block;
-  font-size: var(--font-size-small);
-  color: var(--text-primary);
-  opacity: 0.5;
-  text-decoration: none;
-  margin-bottom: var(--spacing-lg);
-  transition: opacity 0.2s ease;
-}
-
-.back:hover {
-  opacity: 1;
-}
-
-.back::before {
-  content: "← ";
-}
-
 .title {
   font-size: var(--font-size-large);
   line-height: var(--line-height-tight);
