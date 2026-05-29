@@ -7,10 +7,9 @@ Tools, experiments, and resources I'm building. A standalone page listing my Lab
 The whole tool list lives in [`tools.js`](tools.js) as grouped entries:
 
 ```js
-{ title: "Grappa", description: "…", url: "https://grappa.jonasjohansson.se", color: "#12b39a", text: "#252525" }
+{ title: "Grappa", description: "…", url: "https://grappa.jonasjohansson.se" }
 ```
 
-- `color` — the accent shown as the card's left edge and its hover flood.
-- `text` — text colour once a card floods on hover (defaults to `#f0f0f0`); set a dark value like `#252525` for light/bright accents.
+Add an entry to the relevant group, or add a new group with its own `name` and `items`.
 
-No build step. Static HTML, CSS, and one JS file, deployed via GitHub Pages.
+The design follows the [jonasjohansson.se](https://jonasjohansson.se) system: SeasonMix, the shared colour tokens, and time-based light/dark mode. No build step, static HTML, CSS, and one JS file, deployed via GitHub Pages.

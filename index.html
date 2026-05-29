@@ -16,6 +16,14 @@
 
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="/styles.css" />
+
+    <script>
+      // Time-based dark mode (18:00–07:00), same as jonasjohansson.se
+      (function () {
+        var h = new Date().getHours();
+        if (h >= 18 || h < 7) document.documentElement.setAttribute("data-theme", "dark");
+      })();
+    </script>
   </head>
   <body>
     <main class="wrap">
@@ -49,8 +57,6 @@
           card.href = t.url;
           card.target = "_blank";
           card.rel = "noopener noreferrer";
-          card.style.setProperty("--lab-color", t.color);
-          card.style.setProperty("--lab-color-text", t.text || "#f0f0f0");
           card.innerHTML =
             '<h3 class="card-title">' +
             t.title +

@@ -6,21 +6,38 @@
   font-display: swap;
 }
 
+/* Design tokens — mirrors jonasjohansson.se */
 :root {
   --color-white: #f0f0f0;
   --color-black: #252525;
   --color-gray: #555555;
+
+  --bg-primary: var(--color-white);
+  --text-primary: var(--color-black);
+  --hairline: rgba(37, 37, 37, 0.14);
+  --hairline-strong: rgba(37, 37, 37, 0.4);
+
   --font-family: "SeasonMix", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   --font-size-small: clamp(0.9rem, 0.6rem + 1vw, 1.25rem);
   --font-size-intro: clamp(1.05rem, 0.5rem + 1vw + 0.3vh, 1.8rem);
-  --font-size-title: clamp(2.2rem, 1.2rem + 4vw, 5rem);
+  --font-size-large: clamp(1.4rem, 1rem + 1.5vw, 2.4rem);
   --line-height-tight: 1.15;
   --line-height-base: 1.375;
+
   --spacing-xs: 0.25rem;
   --spacing-sm: 0.5rem;
   --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
   --spacing-2xl: 4rem;
   --radius-sm: 4px;
+}
+
+/* Time-based dark mode (18:00–07:00), same as the main site */
+html[data-theme="dark"] {
+  --bg-primary: var(--color-black);
+  --text-primary: var(--color-white);
+  --hairline: rgba(240, 240, 240, 0.12);
+  --hairline-strong: rgba(240, 240, 240, 0.4);
 }
 
 * {
@@ -28,13 +45,13 @@
 }
 
 html {
-  background-color: var(--color-black);
+  background-color: var(--bg-primary);
 }
 
 body {
   margin: 0;
-  background-color: var(--color-black);
-  color: var(--color-white);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   font-family: var(--font-family);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -43,7 +60,7 @@ body {
 .wrap {
   max-width: 1200px;
   margin: 0 auto;
-  padding: var(--spacing-2xl) var(--spacing-lg) var(--spacing-2xl);
+  padding: var(--spacing-2xl) var(--spacing-lg);
 }
 
 /* Masthead */
@@ -54,7 +71,7 @@ body {
 .back {
   display: inline-block;
   font-size: var(--font-size-small);
-  color: var(--color-white);
+  color: var(--text-primary);
   opacity: 0.5;
   text-decoration: none;
   margin-bottom: var(--spacing-lg);
@@ -70,10 +87,10 @@ body {
 }
 
 .title {
-  font-size: var(--font-size-title);
+  font-size: var(--font-size-large);
   line-height: var(--line-height-tight);
   margin: 0;
-  letter-spacing: -0.01em;
+  font-weight: normal;
 }
 
 .intro {
@@ -81,7 +98,7 @@ body {
   line-height: var(--line-height-base);
   margin: var(--spacing-sm) 0 0;
   opacity: 0.6;
-  max-width: 40ch;
+  max-width: 42ch;
 }
 
 /* Groups */
@@ -91,14 +108,12 @@ body {
 
 .group-title {
   font-size: var(--font-size-small);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
   opacity: 0.4;
   margin: 0 0 var(--spacing-lg);
   font-weight: normal;
 }
 
-/* Card grid */
+/* Card grid — restrained monochrome hairline cards */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -109,19 +124,15 @@ body {
   display: flex;
   flex-direction: column;
   padding: var(--spacing-lg);
-  border: 1px solid rgba(240, 240, 240, 0.1);
-  border-left: 3px solid var(--lab-color, var(--color-gray));
+  border: 1px solid var(--hairline);
   border-radius: var(--radius-sm);
-  color: var(--color-white);
+  color: var(--text-primary);
   text-decoration: none;
-  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+  transition: border-color 0.2s ease;
 }
 
 .card:hover {
-  background-color: var(--lab-color, rgba(240, 240, 240, 0.08));
-  border-color: var(--lab-color, rgba(240, 240, 240, 0.4));
-  color: var(--lab-color-text, var(--color-white));
-  transform: translateY(-2px);
+  border-color: var(--hairline-strong);
 }
 
 .card-title {
@@ -135,17 +146,4 @@ body {
   line-height: var(--line-height-base);
   margin: var(--spacing-xs) 0 0;
   opacity: 0.6;
-}
-
-.card:hover .card-desc {
-  opacity: 0.85;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .card {
-    transition: none;
-  }
-  .card:hover {
-    transform: none;
-  }
 }
