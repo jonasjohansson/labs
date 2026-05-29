@@ -46,6 +46,12 @@ html[data-theme="dark"] {
 
 html {
   background-color: var(--bg-primary);
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* old Edge/IE */
+}
+
+html::-webkit-scrollbar {
+  display: none; /* WebKit */
 }
 
 body {
