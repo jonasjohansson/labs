@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Labs — Jonas Johansson</title>
+    <meta
+      name="description"
+      content="Tools, experiments, and resources I'm building. By Jonas Johansson." />
+    <link rel="canonical" href="https://labs.jonasjohansson.se/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Labs — Jonas Johansson" />
+    <meta property="og:description" content="Tools, experiments, and resources I'm building." />
+    <meta property="og:url" content="https://labs.jonasjohansson.se/" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <header class="masthead">
+        <a class="back" href="https://jonasjohansson.se">Jonas Johansson</a>
+        <h1 class="title">Labs</h1>
+        <p class="intro">Tools, experiments, and resources I'm building.</p>
+      </header>
+
+      <div id="labs"></div>
+    </main>
+
+    <script src="/tools.js"></script>
+    <script>
+      const grid = document.getElementById("labs");
+      for (const group of LABS) {
+        const section = document.createElement("section");
+        section.className = "group";
+
+        const h = document.createElement("h2");
+        h.className = "group-title";
+        h.textContent = group.name;
+        section.appendChild(h);
+
+        const cards = document.createElement("div");
+        cards.className = "grid";
+
+        for (const t of group.items) {
+          const card = document.createElement("a");
+          card.className = "card";
+          card.href = t.url;
+          card.target = "_blank";
+          card.rel = "noopener noreferrer";
+          card.style.setProperty("--lab-color", t.color);
+          card.style.setProperty("--lab-color-text", t.text || "#f0f0f0");
+          card.innerHTML =
+            '<h3 class="card-title">' +
+            t.title +
+            "</h3>" +
+            (t.description ? '<p class="card-desc">' + t.description + "</p>" : "");
+          cards.appendChild(card);
+        }
+
+        section.appendChild(cards);
+        grid.appendChild(section);
+      }
+    </script>
+  </body>
+</html>
