@@ -137,25 +137,10 @@ body {
 }
 
 .item {
-  display: flex;
-  gap: var(--spacing-lg);
-  align-items: start;
+  display: block;
   color: var(--text-primary);
   text-decoration: none;
   line-height: var(--line-height-base);
-}
-
-/* Portrait slot — only renders when a tool has a `portrait` set.
-   Drop a file at e.g. /portraits/indigo.svg and reference it in tools.js. */
-.item-portrait {
-  flex: none;
-  width: 56px;
-  height: 56px;
-  object-fit: contain;
-}
-
-.item-body {
-  display: block;
 }
 
 .item-title {
@@ -171,18 +156,10 @@ body {
   text-decoration-color: currentColor;
 }
 
-.item-role {
-  display: block;
-  font-size: var(--font-size-small);
-  font-style: italic;
-  opacity: 0.8;
-  margin-top: 2px;
-}
-
 .item-desc {
   display: block;
   font-size: var(--font-size-small);
-  opacity: 0.5;
+  opacity: 0.55;
   margin-top: var(--spacing-xs);
   max-width: 46ch;
 }
