@@ -58,10 +58,12 @@
           item.target = "_blank";
           item.rel = "noopener noreferrer";
           item.innerHTML =
-            '<span class="item-title">' +
-            t.title +
-            "</span>" +
-            (t.description ? '<span class="item-desc">' + t.description + "</span>" : "");
+            (t.portrait ? '<img class="item-portrait" src="' + t.portrait + '" alt="" />' : "") +
+            '<span class="item-body">' +
+            '<span class="item-title">' + t.title + "</span>" +
+            (t.role ? '<span class="item-role">' + t.role + "</span>" : "") +
+            (t.description ? '<span class="item-desc">' + t.description + "</span>" : "") +
+            "</span>";
           list.appendChild(item);
         }
 
