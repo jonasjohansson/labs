@@ -26,6 +26,7 @@ const LABS = [
       { title: "Every Night Studios", description: "Cap prototyper, a grid of mockups with shared text and logo, export to zip", url: "https://everynightstudios.jonasjohansson.se" },
       { title: "Flight Finder", description: "Opens the same flight search across Google Flights, Kiwi, Skyscanner, and Momondo at once", url: "https://jonasjohansson.github.io/flight-finder/" },
       { title: "Godnapp", description: "Sleep timer for Sveriges Radio, pick a channel, set a timer, drift off", url: "https://jonasjohansson.github.io/godnapp/" },
+      { title: "Slapp", description: "Stockholm transit companion, journey search, live departures, and mirrors your SL ticket to a second screen", url: "https://sl.jonasjohansson.se" },
       { title: "Helpers", description: "Collection of small browser-based utilities", url: "https://github.com/jonasjohansson/helpers" },
     ],
   },
