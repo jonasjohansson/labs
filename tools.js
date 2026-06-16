@@ -10,12 +10,14 @@ const LABS = [
       { title: "Mio", description: "Serial communication app", url: "https://github.com/jonasjohansson/mio" },
       { title: "Conrad", description: "Minimal controller interface for web-enabled devices", url: "https://github.com/jonasjohansson/conrad" },
       { title: "Homie", description: "Minimal bookmark browser", url: "https://github.com/jonasjohansson/homie" },
+      { title: "LedZeppelin", description: "Realtime show tool for addressable LED, Resolume-style: render generative visuals, map fixtures onto a canvas, and stream them to QuinLED controllers over DDP", url: "https://ledzeppelin.jonasjohansson.se" },
     ],
   },
   {
     name: "Browser tools",
     items: [
       { title: "Grappa", description: "Reads an image's tones into a gradient map and exports a .cube LUT for After Effects, Premiere, or Resolve", url: "https://grappa.jonasjohansson.se" },
+      { title: "Matte", description: "Builds black-and-white animated transition mattes in WebGPU and exports them as luma mattes for After Effects, Premiere, or Resolve", url: "https://matte.jonasjohansson.se" },
       { title: "Slicer", description: "Loads 3D models and slices them into layered cross-section contours", url: "https://slicer.jonasjohansson.se" },
       { title: "Kagora", description: "LED installation diagram and bill-of-materials generator", url: "https://kagora.jonasjohansson.se" },
       { title: "Testbild", description: "Test card generator for multi-surface projection setups", url: "https://jonasjohansson.github.io/testbild/" },
